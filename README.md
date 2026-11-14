@@ -1,7 +1,4 @@
-#AWS_S3_Search_engine
-SRIB-PRISM Program
-
-# AWS S3 Search Engine
+# AWS_S3_Search_engine
 
 Production-oriented Flask application for high-volume S3 object indexing and search with SQLite-backed queries and event-driven updates.
 
