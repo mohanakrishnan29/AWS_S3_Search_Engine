@@ -1,0 +1,29 @@
+# Environment variables and credentials
+.env
+*.env
+**/.env
+
+# Virtual environment
+.venv/
+venv/
+env/
+ENV/
+**/.venv/
+
+# Python cache
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Databases and local test storage
+s3_index.json
+s3_index.db
+*.db
+*.sqlite
+mock_s3_bucket/
+**/mock_s3_bucket/
+
+

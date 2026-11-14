@@ -1,0 +1,205 @@
+/* Custom Styles for S3 Search Engine */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.jumbotron {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.nav-tabs .nav-link {
+    color: #495057;
+    font-weight: 500;
+}
+
+.nav-tabs .nav-link:hover {
+    color: #0d6efd;
+}
+
+.nav-tabs .nav-link.active {
+    color: #0d6efd;
+    font-weight: 600;
+}
+
+.card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.results-table {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1f3f5;
+    cursor: pointer;
+}
+
+.search-status {
+    padding: 1rem;
+    border-radius: 0.375rem;
+    margin-top: 1rem;
+}
+
+.search-status.success {
+    background-color: #d1e7dd;
+    border: 1px solid #badbcc;
+    color: #0f5132;
+}
+
+.search-status.error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c2c7;
+    color: #842029;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+    border-width: 0.15em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .jumbotron h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Loading animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+/* Chart container */
+#monthlyChart {
+    max-height: 400px;
+}
+
+/* Action Toolbar */
+.action-toolbar {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+.action-toolbar.hidden {
+    display: none;
+}
+
+.action-toolbar .bg-white {
+    border: 2px solid #0d6efd;
+}
+
+/* Checkbox styling */
+.object-checkbox {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+#select-all-checkbox {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+/* Table row highlighting */
+.table-active {
+    background-color: #e7f3ff !important;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+
+/* Modal enhancements */
+.modal-header.bg-danger {
+    border-bottom: none;
+}
+
+.btn-close-white {
+    filter: brightness(0) invert(1);
+}
+
+/* File count badge */
+#fileCount, #deleteCount {
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+/* Responsive table */
+.results-table {
+    overflow-x: auto;
+}
+
+.results-table table {
+    min-width: 800px;
+}
+
+/* Action buttons styling */
+.action-toolbar .btn-group .btn {
+    margin: 0 2px;
+}
+
+/* Toast notifications enhancement */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1050;
+}
+
+/* Selection count styling */
+#selection-count {
+    font-size: 1.1rem;
+    color: #0d6efd;
+}
+
+/* Responsive adjustments for action toolbar */
+@media (max-width: 768px) {
+    .action-toolbar .d-flex {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .action-toolbar .btn-group {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .action-toolbar .btn {
+        flex: 1;
+        margin: 2px;
+    }
+}

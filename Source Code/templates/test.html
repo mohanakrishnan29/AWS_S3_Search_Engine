@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Test</title>
+</head>
+<body>
+    <h1>JavaScript Test Page</h1>
+    <button id="testBtn" onclick="testSearch()">Test Search</button>
+    <div id="result"></div>
+    
+    <script>
+        console.log("Test page loaded");
+        
+        async function testSearch() {
+            console.log("Test button clicked");
+            document.getElementById('result').innerText = "Testing...";
+            
+            try {
+                const response = await fetch('/api/search/older-than', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        n_days: 100,
+                        prefix: '',
+                        suffix: ''
+                    })
+                });
+                
+                const data = await response.json();
+                document.getElementById('result').innerHTML = `
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                `;
+                console.log("Search result:", data);
+            } catch (error) {
+                document.getElementById('result').innerText = "Error: " + error.message;
+                console.error("Search error:", error);
+            }
+        }
+    </script>
+</body>
+</html>

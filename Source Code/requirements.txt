@@ -1,0 +1,95 @@
+# S3 Search Engine - Python Dependencies
+# Last Updated: March 21, 2026 (Version 2.1)
+# For fresh installation on new laptop environment
+
+# ============================================================================
+# CORE DEPENDENCIES (REQUIRED)
+# ============================================================================
+
+# Flask and Web Framework
+Flask==3.0.0
+Werkzeug==3.0.1
+
+# AWS SDK for Python (Required for S3 operations: copy, delete, list, etc.)
+# Note: aioboto3 includes boto3/botocore, but we list them explicitly for clarity
+boto3>=1.34.0
+botocore>=1.34.0
+
+# Async AWS SDK (Optional - for optimized S3 operations with 3-4x speedup)
+# Includes updated boto3/botocore dependencies
+aioboto3>=15.0.0
+aiohttp>=3.13.0
+
+# Environment Variables Management
+python-dotenv==1.0.0
+
+# ============================================================================
+# BUILT-IN LIBRARIES (No installation needed - listed for reference)
+# ============================================================================
+# sqlite3 - Database operations (built-in)
+# json - JSON parsing (built-in)
+# datetime - Timestamp handling (built-in)
+# threading - Background workers (built-in)
+# collections - Data structures (built-in)
+# atexit - Cleanup handlers (built-in)
+
+# ============================================================================
+# OPTIONAL DEPENDENCIES
+# ============================================================================
+
+# Data Processing (OPTIONAL - only needed for S3 Inventory parsing)
+# These provide 10-20x speedup for initial indexing if using S3 Inventory
+# On Windows, install with: pip install pandas pyarrow --only-binary :all:
+# pandas>=2.0.0
+# pyarrow>=14.0.0
+
+# Production Server (OPTIONAL - for production deployment)
+gunicorn==21.2.0
+
+# Development Tools (OPTIONAL - for development environment)
+python-decouple==3.8
+
+# Testing (OPTIONAL - for running test suite)
+pytest==7.4.3
+pytest-flask==1.3.0
+requests==2.31.0
+
+# Code Quality (OPTIONAL - for linting and formatting)
+flake8==7.0.0
+black==23.12.1
+
+# Type Hints (OPTIONAL - for static type checking)
+mypy==1.7.1
+
+# ============================================================================
+# INSTALLATION INSTRUCTIONS for New Laptop Environment
+# ============================================================================
+# 
+# 1. Create virtual environment:
+#    python -m venv .venv
+#
+# 2. Activate virtual environment:
+#    Windows PowerShell: .venv\Scripts\Activate.ps1
+#    Windows CMD: .venv\Scripts\activate.bat
+#    Linux/Mac: source .venv/bin/activate
+#
+# 3. Upgrade pip:
+#    python -m pip install --upgrade pip
+#
+# 4. Install core dependencies only:
+#    pip install Flask==3.0.0 Werkzeug==3.0.1 boto3>=1.34.0 python-dotenv==1.0.0
+#
+# 5. OR install all dependencies (core + optional):
+#    pip install -r requirements.txt
+#
+# 6. Verify installation:
+#    python -c "import flask, boto3, dotenv; print('All core dependencies installed!')"
+#
+# ============================================================================
+# NOTES
+# ============================================================================
+# - boto3 is REQUIRED for S3 operations (copy, delete, bucket validation)
+# - aioboto3 is optional but recommended for better performance
+# - SQLite3 is built-in to Python, no installation needed
+# - For production deployment, consider using gunicorn or similar WSGI server
+# ============================================================================
